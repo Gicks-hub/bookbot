@@ -33,14 +33,19 @@ def fit_character_in_dict():
 	print(alphabet_dict)
 	return alphabet_dict
 
-def sort_dict_by_count(dict):
+def sort_dict_by_item(dict):
 	return dict["num"]
+
 
 def num_char_dictionary(dict):
 	num_char_dict={}
+	new_dict_list=[]
 	for element in dict:
 		if element.isalpha():
 			num_char_dict["char"] = element
 			num_char_dict["num"] = dict[element]
+			new_dict_list.append(num_char_dict)
 			print(num_char_dict)
+			print(new_dict_list)
+	print(new_dict_list)
 	return num_char_dict
