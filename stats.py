@@ -20,7 +20,7 @@ def get_num_words():
 	count=0
 	for word in text:
 		count+=1
-	print(f"Found {count} total words")
+	return f"Found {count} total words"
 
 def fit_character_in_dict():
 	book_character = get_book_text().lower()
@@ -45,4 +45,16 @@ def num_char_dictionary(dict):
 			num_char_dict["num"] = dict[element]
 			new_dict_list.append(num_char_dict)
 	new_dict_list.sort(reverse=True, key=sort_dict_by_item)
-	return num_char_dict
+	return new_dict_list
+
+
+
+def print_records(dict_list):
+	print("============ BOOKBOT ============")
+	print("Analyzing book found at books/frankenstein.txt...")
+	print("----------- Word Count ----------")
+	print(get_num_words())
+	print("--------- Character Count -------")
+	for i in range(len(dict_list)):
+		print(f"{dict_list[i]["char"]}: {dict_list[i]["num"]}")
+	return print("============= END ===============")
