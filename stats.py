@@ -30,7 +30,6 @@ def fit_character_in_dict():
 			alphabet_dict[character] +=1
 		else:
 			alphabet_dict[character] = 1
-	print(alphabet_dict)
 	return alphabet_dict
 
 def sort_dict_by_item(dict):
@@ -38,14 +37,12 @@ def sort_dict_by_item(dict):
 
 
 def num_char_dictionary(dict):
-	num_char_dict={}
 	new_dict_list=[]
 	for element in dict:
+		num_char_dict={}
 		if element.isalpha():
 			num_char_dict["char"] = element
 			num_char_dict["num"] = dict[element]
 			new_dict_list.append(num_char_dict)
-			print(num_char_dict)
-			print(new_dict_list)
-	print(new_dict_list)
+	new_dict_list.sort(reverse=True, key=sort_dict_by_item)
 	return num_char_dict
