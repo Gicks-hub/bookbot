@@ -3,8 +3,8 @@ def get_book_text(book):
 		file_contents =f.read()
 	return file_contents
 
-def main():
-	text = get_book_text().split()
+def main(book):
+	text = get_book_text(book).split()
 	return text
 
 def count_words_in_text(searched_word):
@@ -15,15 +15,15 @@ def count_words_in_text(searched_word):
 			count+=1
 	return f"Found {count} total words"
 
-def get_num_words():
-	text = main()
+def get_num_words(book):
+	text = main(book)
 	count=0
 	for word in text:
 		count+=1
 	return f"Found {count} total words"
 
-def fit_character_in_dict():
-	book_character = get_book_text().lower()
+def fit_character_in_dict(book):
+	book_character = get_book_text(book).lower()
 	alphabet_dict={}
 	for character in book_character:
 		if character in alphabet_dict:
@@ -49,11 +49,11 @@ def num_char_dictionary(dict):
 
 
 
-def print_records(dict_list):
+def print_records(dict_list,book):
 	print("============ BOOKBOT ============")
 	print("Analyzing book found at books/frankenstein.txt...")
 	print("----------- Word Count ----------")
-	print(get_num_words())
+	print(get_num_words(book))
 	print("--------- Character Count -------")
 	for i in range(len(dict_list)):
 		print(f"{dict_list[i]["char"]}: {dict_list[i]["num"]}")

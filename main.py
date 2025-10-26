@@ -5,6 +5,9 @@ from stats import print_records
 import sys
 
 
+if len(sys.argv) <2:
+	print("Usage: python3 main.py <path_to_book>")
+	sys.exit(1)
+else:
+	print_records(num_char_dictionary(fit_character_in_dict(sys.argv[1])),sys.argv[1])
 
-print_records(num_char_dictionary(fit_character_in_dict()))
-print(sys.argv[1])
